@@ -510,9 +510,16 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
+  <a class="reference internal nav-link" href="#task-1-wrap-up">
+   Task 1 Wrap Up
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#psen1-coefficient-of-relatedness-heatmaps">
+     PSEN1 Coefficient of Relatedness Heatmaps
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -529,8 +536,41 @@
 <h1>NRI - Update 3<a class="headerlink" href="#nri-update-3" title="Permalink to this headline">¶</a></h1>
 <p>April 25, 2020</p>
 <p>Helen Huang, Shivam Misra, Priya Padmanabhan, Surya Pugal,  Yixiao Yue</p>
-<div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="task-1-wrap-up">
+<h2>Task 1 Wrap Up<a class="headerlink" href="#task-1-wrap-up" title="Permalink to this headline">¶</a></h2>
+<p>As a continuation from the heatmap of I416T variant from update 2, we explored all of the other ones in the same manner to see how the values of Plink, King, and Kinship2 differed amongst them.</p>
+<div class="section" id="psen1-coefficient-of-relatedness-heatmaps">
+<h3>PSEN1 Coefficient of Relatedness Heatmaps<a class="headerlink" href="#psen1-coefficient-of-relatedness-heatmaps" title="Permalink to this headline">¶</a></h3>
+<p>Here are the final heatmaps (done at the end of last quarter) which represent the differences between the theoretical (Kinship2) values and the values produced by King and Plink. The boxes represent each family for the variants that are spread throughout multiple families.</p>
+<p><strong>E280A</strong></p>
+<p><img alt="" src="../../_images/E280A_smaller.png" /></p>
+<ul class="simple">
+<li><p>Relatively lighter on the King side than the Plink side</p></li>
+<li><p>0788 - as denoted by the arrow, contains several blue spots in its row, corresponding to very high deviation between Plink and Kinship2(theoretical)</p></li>
+<li><p>Diagonal - the Kinship2 value (taken to be the theoretical) was found to be 0 for comparison between one individual and another individual from another family –  however this is not to be taken as 100% accurate as kinship2 values can vary due to partial data. This means we need to make our own best guess given provided data</p></li>
+<li><p>Comprises of individuals from different families and is only concerned with those found to have the said mutation</p></li>
+</ul>
+<p><strong>P264L</strong></p>
+<p><img alt="" src="../../_images/P264L_smaller.png" /></p>
+<ul class="simple">
+<li><p>Observe darker discoloration in the results in the Plink, especially within the second row, corresponding to individual 0325</p></li>
+<li><p>Plink  may potentially be overestimating the coefficient of relatedness for that particular individual, at least with respect to the theoretical</p></li>
+<li><p>Other individuals of interest include 0093 and 0407, as we see in their respective rows, the contiguous orange-ish red sequence indicates a tendency to underestimate for these individuals on King’s end</p></li>
+<li><p>Respective column corresponding to 0407 - the orange-red color is consistent along the column and over the diagonal indicating the underestimation pattern exists for both software</p></li>
+<li><p>Finally, for individual 0415, the bottom most arrow, its corresponding column which is the farthest most right consists of heavy green – Plink here highly overestimates, but King stays close to theoretical</p></li>
+</ul>
+<p><strong>Other Variants with Smaller Population</strong></p>
+<p><img alt="" src="../../_images/Combination.png" /></p>
+<ul class="simple">
+<li><p>For a number of these mutations, the discovery of their relationship with respect to Alzheimer’s has been relatively recent – as late as 2019</p>
+<ul>
+<li><p>I162S, Q223K, I427V</p></li>
+</ul>
+</li>
+<li><p>Secondly, some of the mutations have been known for a while, but were specific to certain geographic regions. For instance, the H163R mutations occurs predominantly in Japan and is not frequently observed in Columbia, where the overall datasets are pertinent to</p></li>
+<li><p>With regards to the heatmaps of the smaller datasets, the common trend we see is that King consistently underestimates whereas Plink consistently overestimates here, a trend which is especially pronounced by the orangish color in the lower triangles and green-bluish color in the upper triangles</p></li>
+</ul>
+</div>
 </div>
 </div>
 

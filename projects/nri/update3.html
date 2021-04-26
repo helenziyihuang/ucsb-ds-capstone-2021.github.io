@@ -521,6 +521,62 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#task-2-purpose">
+     Task 2 Purpose
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#software">
+   Software
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vcftools">
+     VCFtools
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hap-ibd">
+     Hap-IBD
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data">
+   Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#phased-vcf-files">
+     Phased VCF Files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hap-ibd-files">
+     Hap-IBD Files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-processing">
+   Data Processing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-analysis">
+   Data Analysis
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -571,6 +627,49 @@
 <li><p>With regards to the heatmaps of the smaller datasets, the common trend we see is that King consistently underestimates whereas Plink consistently overestimates here, a trend which is especially pronounced by the orangish color in the lower triangles and green-bluish color in the upper triangles</p></li>
 </ul>
 </div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>At the end of Task 1, as discussed in the above section, we have analyzed the family structures of all PSEN1 variants and calculated the coefficient of relatedness for every pair of individuals using the pedigree information given. With that, for each PSEN1 variant, we now have an idea about how each mutation-carrying individual is related to each other (ex. parent-offspring, siblings, etc.) from the <strong>pedigree perspective</strong>. Moving on, we are going to analyze their relationship from the <strong>genome level</strong>, by comparing their genome sequences, in order to finish up our Goal #1 (Calculate how many generations ago was the common ancestor for each variant).</p>
+<div class="section" id="task-2-purpose">
+<h3>Task 2 Purpose<a class="headerlink" href="#task-2-purpose" title="Permalink to this headline">¶</a></h3>
+<p>The main purpose of task 2 is to see how each mutation-carrying individual is related to others on the genome level quantitatively. As presented in Update 1, <strong>Identical By Descent (IBD)</strong> describes that two or more individuals share similar nucleotide sequences and inherit that shared segment from a common ancestor; thus, IBD length is correlated with historical relationship. So in task2, we are going to calculate the length of the shared DNA segment (IBD length) of each pair of individual, and analyze the historical relationship based on that.</p>
+</div>
+</div>
+<div class="section" id="software">
+<h2>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="vcftools">
+<h3>VCFtools<a class="headerlink" href="#vcftools" title="Permalink to this headline">¶</a></h3>
+<p>VCFtools is a suite of functions for use on genetic variation data in the form of VCF and BCF files. The tools will be used to process genetic data, run calculations, and is able to convert the data into other useful file formats. A manual of the tools can be found on this <a class="reference external" href="https://vcftools.github.io/man_latest.html">website</a>.</p>
+</div>
+<div class="section" id="hap-ibd">
+<h3>Hap-IBD<a class="headerlink" href="#hap-ibd" title="Permalink to this headline">¶</a></h3>
+<p>The Hap-IBD program detects IBD segments in phased genotype data. The Hap-IBD program can analyze data sets with hundreds of thousands of samples. You can read more about this method from this <a class="reference external" href="https://doi.org/10.1016/j.ajhg.2020.02.010">paper</a>.</p>
+</div>
+</div>
+<div class="section" id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="phased-vcf-files">
+<h3>Phased VCF Files<a class="headerlink" href="#phased-vcf-files" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Contains phased genetic data including chromosome, haplotypes of the individuals</p></li>
+</ul>
+</div>
+<div class="section" id="hap-ibd-files">
+<h3>Hap-IBD Files<a class="headerlink" href="#hap-ibd-files" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Contains genetic data including chromosome and IBD information</p></li>
+<li><p>To be used in the Hap-IBD program</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="data-processing">
+<h2>Data Processing<a class="headerlink" href="#data-processing" title="Permalink to this headline">¶</a></h2>
+<p>The tools we made use of include vcftools, as well as plink, king, and kinship2 from the earlier updates. We obtained an excel file which contains pairs of individuals of interest, along with their corresponding haplotypes, IBD lengths (in terms of unit known as centimorgans), and start and end points of the commonly shared segments within nucleotide sequences. We were also with a text file containing the variants associated with certain families.</p>
+</div>
+<div class="section" id="data-analysis">
+<h2>Data Analysis<a class="headerlink" href="#data-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Using the files, we looked at which individuals were carriers of genetic Alzheimer’s. To do this, we looked at 1) if they were labeled as having the same haplotype and 2) if the segment overlapped with the region corresponding to the PSEN1 mutation (73603143 to 73690399). We also had to re-do some of our analysis after meeting with our PI after we found that some of the carriers did not match with what was expected, which we determine to be the result of looking at other non-significant individuals.</p>
 </div>
 </div>
 
